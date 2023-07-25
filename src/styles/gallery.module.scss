@@ -1,0 +1,22 @@
+.imageGallery {
+    margin: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: 8px;
+        
+    }
+}
+.galleryHeading {
+   text-align: center;
+   margin: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}

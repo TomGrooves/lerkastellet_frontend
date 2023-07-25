@@ -1,0 +1,50 @@
+.welcomeContainer {
+    width: 80%; 
+    margin: auto;
+    height: 40vh;
+    h2 {
+        text-align: center;
+    }
+    div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .welcomeText {
+            margin-top: 16px;
+            padding-top: 0;
+
+            p {
+                margin-top: 0;
+            }
+        }
+        .welcomeImages {
+            position: relative;
+            img {
+                border: solid 8px white; 
+            }
+
+            img:nth-child(1){
+                min-width: 220px;
+                height: 220px;
+                position: absolute;
+                left: 150px;
+                top: 5%;
+            }
+
+            img:nth-child(2){
+                min-width: 170px;
+                height: 170px;
+                position: absolute;
+                left: 280px;
+                top: 75%;
+            }
+
+            img:nth-child(3){
+                width: 140px;
+                height: 140px;
+                position: absolute;
+                left: 390px;
+                top: 30%;
+            }
+        }
+    }
+}
