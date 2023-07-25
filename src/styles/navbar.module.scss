@@ -1,25 +1,40 @@
+@import './globals.scss';
+
 .navBar {
-    background-color: white;
+    z-index: 99;
+    background-color: $color-white;
+    position: sticky;
+    top:0;
+    left:0;
     width: 100%;
     height: 60px;
-    border-bottom: solid 2px black;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    transition: all 0.3s ease;
     div {
-        width: 30%;
+        width: 20%;
         height: 100%;
         margin: auto;
         display: grid;
         text-align: center;
         grid-template-columns: 1fr 1fr 1fr;
-        justify-content: center;
-        align-content: center;
 
         a{
+            margin:auto;
             text-decoration: none;
-            color: black;
+            color: $color-black;
+            font-size: $font-size-small;
+            height: 16px;
         }
 
         a:hover {
-            color: rgb(140,140,140)
+            color: $color-brown-dark;
         }
     }
+
+}
+
+.slim {
+    @extend .navBar;
+    background-color: rgba(250,250,250,0.97);
+    height: 45px;
 }

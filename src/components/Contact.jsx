@@ -41,6 +41,7 @@ export const ContactForm = () => {
 
   return (
     <section className={style.contactContainer}>
+      <h2>Kontakt</h2>
       <h4>{feedbackText}</h4>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="name">Name:</label>
