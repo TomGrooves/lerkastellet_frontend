@@ -1,11 +1,13 @@
+@import './globals.scss';
+
 .imageGallery {
     margin: auto;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: $spacing-medium;
+    margin-bottom: $spacing-medium;
     width: 80%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 16px;
+    gap: $spacing-medium;
 
     img {
         width: 200px;
@@ -17,6 +19,8 @@
 .galleryHeading {
    text-align: center;
    margin: auto;
-    margin-top: 16px;
-    margin-bottom: 16px;
+   font-size: $font-size-medium;
+    margin-top: $spacing-large;
+    margin-bottom: $spacing-large;
+    font-family: 'Kaushan Script', cursive;
 }

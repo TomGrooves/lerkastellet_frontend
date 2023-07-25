@@ -1,11 +1,24 @@
+@import './globals.scss';
+
 .header {
-    height: 50vh;
+    height: 70vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: aquamarine;
+    background-position-x: center;
+    background-blend-mode: color;
+    background-color: rgba(255,255,255,0.37);
 
     h1 {
+        font-family: 'Kaushan Script', cursive;
         margin: 0;
+        font-size: $font-size-extra-large;
+        position: relative;
+        top: 30%;
+        margin-left: 10%;
+    }
+
+    h1::first-letter{
+        font-size: 12rem;
     }
 }

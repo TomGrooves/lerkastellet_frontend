@@ -1,18 +1,24 @@
+@import './globals.scss';
+
 .welcomeContainer {
     width: 80%; 
     margin: auto;
-    height: 40vh;
+    height: 50vh;
     h2 {
+        font-family: 'Kaushan Script', cursive;
         text-align: center;
+        font-size: $font-size-medium;
     }
     div {
         display: grid;
         grid-template-columns: 1fr 1fr;
+
         .welcomeText {
             margin-top: 16px;
             padding-top: 0;
 
             p {
+                font-size: $font-size-small;
                 margin-top: 0;
             }
         }

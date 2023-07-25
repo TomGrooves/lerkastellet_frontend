@@ -1,5 +1,7 @@
+@import './globals.scss';
+
 .footerContainer {
-    background-color: bisque;
+    background-color: $color-brown-light;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     justify-content: center;
