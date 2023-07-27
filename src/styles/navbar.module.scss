@@ -38,3 +38,12 @@
     background-color: rgba(250,250,250,0.97);
     height: 45px;
 }
+
+@media only screen and (max-width: 760px) {
+    .navBar{
+        div {
+            width: 100%;
+    
+        }
+    }
+}

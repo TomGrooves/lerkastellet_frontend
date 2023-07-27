@@ -11,7 +11,7 @@ export const Gallery = () => {
     if (error) return <h1>Something went wrong..</h1>
     if (status == "success") return (
     <>
-        <h2 className={style.galleryHeading}>Seneste nyt</h2>
+        <h2 className={style.galleryHeading}>Galleriet</h2>
         <section className={style.imageGallery}>
         {data?.productCollection?.items?.map((item, index) => {
             return (
