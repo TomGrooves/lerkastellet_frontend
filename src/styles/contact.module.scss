@@ -4,7 +4,7 @@
     display: grid; 
     grid-template-rows: 1fr 1fr 4fr;
     margin: auto;
-    width: 80%;
+    width: 70%;
     h2 {
         text-align: center;
         font-size: $font-size-medium;
@@ -14,15 +14,52 @@
         font-size: $font-size-medium;
     }
     form {
+        display: grid;
+        gap: 8px;
         label {
             font-size: $font-size-small
         }
         input {
+            border: none;
+            border-bottom: solid 2px $color-brown-dark;
             width: 100%;
             height: 60px;
         }
-        input[type="textField"]{
-            height: 500px;
+        input[type="textfield"]{
+            height: 100px;
+        }
+        input[type="submit"]{
+            margin-top: 32px;
+            border: none;
+            height: 60px;
+            border-radius: 8px;
+        }
+
+        input:focus {
+            border-bottom: none;
+            border-radius: 8px;
+            outline: solid 1px $color-brown-dark;
+            border-color: $color-brown-dark;
+        }
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .contactContainer {
+        h2 {
+            font-size: 2rem;
+        }
+        h4 {
+            font-size: 1rem;
+        }
+        form {
+            label {
+                font-size: $font-size-small
+            }
+            input {
+                width: 100%;
+                height: 40px;
+            }
         }
     }
 }

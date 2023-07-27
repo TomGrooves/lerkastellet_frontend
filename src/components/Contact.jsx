@@ -49,7 +49,7 @@ export const ContactForm = () => {
         <label htmlFor="email">Email:</label>
         <input type="email" {...register("email", { required: true })} />
         <label htmlFor="message">Message:</label>
-        <input {...register("message", { required: true })} />
+        <input type="textfield" {...register("message", { required: true })} />
         <input type="submit" />
       </form>
       <div style={{textIndent:-99999 + "px", whiteSpace:"nowrap", overflow:"hidden", position:"absolute",}} aria-hidden="true">

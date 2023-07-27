@@ -22,3 +22,20 @@
         font-size: 12rem;
     }
 }
+
+@media only screen and (max-width: 760px) {
+    .header{
+        height: 50vh;
+
+        h1 {
+            top: 10%;
+            font-size: 3rem;
+            text-align: center;
+            margin: auto;
+        }
+
+        h1::first-letter {
+            font-size: 3.5rem;
+        }
+    }
+}

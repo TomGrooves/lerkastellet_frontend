@@ -4,7 +4,7 @@
     margin: auto;
     margin-top: $spacing-medium;
     margin-bottom: $spacing-medium;
-    width: 80%;
+    width: 70%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: $spacing-medium;
@@ -23,4 +23,18 @@
     margin-top: $spacing-large;
     margin-bottom: $spacing-large;
     font-family: 'Kaushan Script', cursive;
+}
+
+@media only screen and (max-width: 760px) {
+    .imageGallery {
+        grid-template-columns: 1fr 1fr;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .galleryHeading {
+        font-size: 2rem;
+
+    }
 }
