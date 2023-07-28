@@ -4,11 +4,12 @@
     display: grid; 
     grid-template-rows: 1fr 1fr 4fr;
     margin: auto;
-    width: 70%;
+    width: 50%;
     h2 {
         text-align: center;
         font-size: $font-size-medium;
-        font-family: 'Kaushan Script', cursive;
+        font-family: $font-family-heading;
+        text-decoration: underline;
     }
     h4 {
         font-size: $font-size-medium;
@@ -17,13 +18,15 @@
         display: grid;
         gap: 8px;
         label {
-            font-size: $font-size-small
+            font-size: $font-size-small;
+            
         }
         input {
             border: none;
-            border-bottom: solid 2px $color-brown-dark;
+            border: solid 1px $color-brown-dark;
             width: 100%;
-            height: 60px;
+            border-radius: 8px;
+            height: 50px;
         }
         input[type="textfield"]{
             height: 100px;
@@ -33,13 +36,22 @@
             border: none;
             height: 60px;
             border-radius: 8px;
+            background-color: $color-brown-dark;
+            transition: all 0.2s ease;
+            font-size: $font-size-small;
+            width: 30%;
+            justify-self: end;
+            cursor: pointer;
+            color: rgb(40,40,40,0.5);
+        }
+        input[type="submit"]:hover {
+            background-color: $color-brown-light;
+            outline:solid 1px $color-white;
         }
 
         input:focus {
-            border-bottom: none;
-            border-radius: 8px;
-            outline: solid 1px $color-brown-dark;
-            border-color: $color-brown-dark;
+            outline:none;
+            border-color: $color-brown-light;
         }
     }
 }
@@ -53,12 +65,19 @@
             font-size: 1rem;
         }
         form {
+            display: grid;
             label {
                 font-size: $font-size-small
             }
             input {
                 width: 100%;
                 height: 40px;
+            }
+            input[type="submit"]{
+              width: 100%;
+              height: 40px;
+              font-size: 1rem;
+              text-align: center;
             }
         }
     }

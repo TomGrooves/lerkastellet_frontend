@@ -1,14 +1,12 @@
 import style from '../styles/welcomesection.module.scss'
-import image1 from '../assets/image1.jpg'
-import image2 from '../assets/image2.jpg'
-import image3 from '../assets/image3.jpg'
+import img from '../assets/group.jpg'
 
 export const WelcomeSection = () => {
 
     return (
         <section className={style.welcomeContainer}>
             <h2>Velkommen</h2>
-            <div>
+            <article>
 
                 <section className={style.welcomeText}>
                     <p>
@@ -20,12 +18,10 @@ export const WelcomeSection = () => {
                 </section>
 
                 <section className={style.welcomeImages}>
-                    <img src={image1}></img>
-                    <img src={image2}></img>
-                    <img src={image3}></img>
+                    <img src={img}></img>
                 </section>
             
-            </div>
+            </article>
         </section>
     )
 }

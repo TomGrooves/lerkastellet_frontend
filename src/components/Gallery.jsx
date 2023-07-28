@@ -10,15 +10,15 @@ export const Gallery = () => {
     if (isInitialLoading) return <h1>Loading....</h1>
     if (error) return <h1>Something went wrong..</h1>
     if (status == "success") return (
-    <>
+    <section id="gallery">
         <h2 className={style.galleryHeading}>Galleriet</h2>
-        <section className={style.imageGallery}>
+        <div className={style.imageGallery}>
         {data?.productCollection?.items?.map((item, index) => {
             return (
                 <img src={item.image.url} key={index}></img>
                 )
             })}
-        </section>
-        </>
+        </div>
+    </section>
     )
 }

@@ -10,14 +10,20 @@
     text-align: center;
 
     h2 {
-        font-size: $font-size-small;
+        font-size: $font-size-semi-medium;
+        margin-bottom: 8px;
+        color: $color-dark-text;
     }
 
     div {
-        width: 50%;
         margin: auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        font-size: $font-size-large;
+
     }
 }
 

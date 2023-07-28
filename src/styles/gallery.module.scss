@@ -3,14 +3,16 @@
 .imageGallery {
     margin: auto;
     margin-top: $spacing-medium;
-    margin-bottom: $spacing-medium;
+    margin-bottom: $spacing-large;
     width: 70%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: $spacing-medium;
+    align-items: center;
+    justify-content: center;
 
     img {
-        width: 200px;
+        width: auto;
         height: 200px;
         border-radius: 8px;
         
@@ -22,7 +24,9 @@
    font-size: $font-size-medium;
     margin-top: $spacing-large;
     margin-bottom: $spacing-large;
-    font-family: 'Kaushan Script', cursive;
+    font-family: $font-family-heading;
+    text-decoration: underline;
+
 }
 
 @media only screen and (max-width: 760px) {

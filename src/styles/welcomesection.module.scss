@@ -3,18 +3,20 @@
 .welcomeContainer {
     width: 70%; 
     margin: auto;
-    height: 50vh;
+    height: 60vh;
     h2 {
-        font-family: 'Kaushan Script', cursive;
+        font-family: $font-family-heading;
         text-align: center;
         font-size: $font-size-medium;
+        text-decoration: underline;
     }
-    div {
+    article {
         display: grid;
         grid-template-columns: 1fr 1fr;
-
+        margin-bottom: $spacing-large;
         .welcomeText {
-            margin-top: 16px;
+            display:grid;
+            align-items: center;
             padding-top: 0;
 
             p {
@@ -23,33 +25,10 @@
             }
         }
         .welcomeImages {
-            position: relative;
+            display: grid;
+            justify-items: end;
             img {
-                border: solid 8px white; 
-            }
-
-            img:nth-child(1){
-                min-width: 220px;
-                height: 220px;
-                position: absolute;
-                left: 150px;
-                top: 5%;
-            }
-
-            img:nth-child(2){
-                min-width: 170px;
-                height: 170px;
-                position: absolute;
-                left: 280px;
-                top: 75%;
-            }
-
-            img:nth-child(3){
-                width: 140px;
-                height: 140px;
-                position: absolute;
-                left: 390px;
-                top: 30%;
+                width: 75%;
             }
         }
     }
@@ -63,27 +42,20 @@
         h2 {
             font-size: 2rem;
         }
-        div {
+        article {
             grid-template-columns: 1fr;
             .welcomeText {
                 p {
-
                     font-size: 1rem;
                 }
             }
-            
-                    .welcomeImages{
-                        display: none;
-                        grid-template-columns: 1fr 1fr 1fr;
-                        img{
-                            height: auto !important;
-                            width: 100%;
-                            position: relative !important;
-                            left:auto !important;
-                            top: auto !important;
-                            min-width: 0px !important;
-                        }
-                    }
+            .welcomeImages {
+                display: grid;
+                justify-items: center;
+                img {
+                    width: 80%;
+                }
+            }
         }
     }
 }
