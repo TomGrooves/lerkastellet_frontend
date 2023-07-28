@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import style from '../styles/contact.module.scss';
+import style from "../styles/contact.module.scss";
 
 export const ContactForm = () => {
   const { register, handleSubmit } = useForm();
@@ -19,7 +19,8 @@ export const ContactForm = () => {
         body: JSON.stringify(data),
       };
 
-      const clientUrl = "https://public.herotofu.com/v1/469a7e40-28ac-11ee-8058-515da3888232";
+      const clientUrl =
+        "https://public.herotofu.com/v1/469a7e40-28ac-11ee-8058-515da3888232";
 
       fetch(clientUrl, fetchOptions)
         .then((res) => {
@@ -40,21 +41,30 @@ export const ContactForm = () => {
   };
 
   return (
-    <section className={style.contactContainer}>
+    <section id="contact" className={style.contactContainer}>
       <h2>Kontakt</h2>
       <h4>{feedbackText}</h4>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="name">Name:</label>
-        <input {...register("name", { required: true })} />
-        <label htmlFor="email">Email:</label>
-        <input type="email" {...register("email", { required: true })} />
-        <label htmlFor="message">Message:</label>
-        <input type="textfield" {...register("message", { required: true })} />
-        <input type="submit" />
+          <label htmlFor="name"><span>Navn</span></label>
+          <input {...register("name", { required: true })} />
+          <label htmlFor="email"><span>Email</span></label>
+          <input type="email" {...register("email", { required: true })} />
+   
+          <label htmlFor="message"><span>Besked</span></label>
+          <input type="textfield" {...register("message", { required: true })} />
+        <input type="submit" value="Send"/>
       </form>
-      <div style={{textIndent:-99999 + "px", whiteSpace:"nowrap", overflow:"hidden", position:"absolute",}} aria-hidden="true">
-      <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" />
-    </div>
+      <div
+        style={{
+          textIndent: -99999 + "px",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          position: "absolute",
+        }}
+        aria-hidden="true"
+      >
+        <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" />
+      </div>
     </section>
   );
-}
+};

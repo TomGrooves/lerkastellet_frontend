@@ -1,25 +1,29 @@
 @import './globals.scss';
 
 .header {
-    height: 70vh;
+    height: 60vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
-    background-blend-mode: color;
-    background-color: rgba(255,255,255,0.37);
+    background-position-y: 50%;
+    background-blend-mode: lighten;
+    background-color: rgba(181, 173, 173, 0.38);
 
     h1 {
-        font-family: 'Kaushan Script', cursive;
+        font-family: $font-family-heading;
         margin: 0;
-        font-size: $font-size-extra-large;
-        position: relative;
-        top: 30%;
-        margin-left: 10%;
+        font-size: $font-size-extra-large * 0.95;
+        margin-left: 58%;
+        color: rgba(0,0,0, 0.28);
+        letter-spacing: 4px;
+        text-shadow: 1px 2px 2px 4px $color-cta;
+        font-weight: 100;
     }
 
     h1::first-letter{
-        font-size: 12rem;
+        font-size: $font-size-extra-large * 1.2;
+        font-weight: 100;
     }
 }
 
