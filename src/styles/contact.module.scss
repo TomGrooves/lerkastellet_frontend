@@ -2,9 +2,9 @@
 
 .contactContainer {
     display: grid; 
-    grid-template-rows: 1fr 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
     margin: auto;
-    width: 50%;
+    width: 70%;
     h2 {
         text-align: center;
         font-size: $font-size-medium;
@@ -16,7 +16,9 @@
     }
     form {
         display: grid;
-        gap: 8px;
+        gap: $spacing-small;
+        width: 70%;
+        margin:auto;
         label {
             font-size: $font-size-small;
             
@@ -26,23 +28,23 @@
             border: solid 1px $color-brown-dark;
             width: 100%;
             border-radius: 8px;
-            height: 50px;
+            height: 40px;
         }
         input[type="textfield"]{
-            height: 100px;
+            height: 160px;
         }
         input[type="submit"]{
             margin-top: 32px;
             border: none;
-            height: 60px;
+            height: 40px;
             border-radius: 8px;
-            background-color: $color-brown-dark;
+            background-color: $color-brown-light;
             transition: all 0.2s ease;
             font-size: $font-size-small;
-            width: 30%;
+            width: 20%;
             justify-self: end;
             cursor: pointer;
-            color: rgb(40,40,40,0.5);
+            color: $color-brown-darker;
         }
         input[type="submit"]:hover {
             background-color: $color-brown-light;
@@ -56,7 +58,7 @@
     }
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 1160px) {
     .contactContainer {
         h2 {
             font-size: 2rem;
@@ -65,6 +67,7 @@
             font-size: 1rem;
         }
         form {
+            width: 90%;
             display: grid;
             label {
                 font-size: $font-size-small
@@ -74,7 +77,7 @@
                 height: 40px;
             }
             input[type="submit"]{
-              width: 100%;
+              width: 50%;
               height: 40px;
               font-size: 1rem;
               text-align: center;

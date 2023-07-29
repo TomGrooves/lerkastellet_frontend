@@ -15,11 +15,10 @@ export const Modal = ({selectedItem, isModalOpen, setIsModalOpen} : ModalProps) 
 
     if (isModalOpen) return ( 
         <>
-        <div className={style.modalBackground}>
+        <div onClick={() => handleClose()} className={style.modalBackground}>
             <div className={style.modal}>
-                <p>Produkt {selectedItem.title}</p>
+                <p>{selectedItem.title}</p>
                 <img src={selectedItem.image.url}/>
-                <button onClick={() => handleClose()}>CLOSE</button>
             </div>
 
         </div>

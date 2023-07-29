@@ -9,10 +9,15 @@
     margin-top: 32px;
     text-align: center;
 
+    a{
+        text-decoration: none;
+        color: $color-brown-darker;
+    }
+
     h2 {
         font-size: $font-size-semi-medium;
         margin-bottom: 8px;
-        color: $color-dark-text;
+        color: $color-brown-darker;
     }
 
     div {
@@ -23,11 +28,10 @@
         justify-content: center;
         gap: 16px;
         font-size: $font-size-large;
-
     }
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 1160px) {
     .footerContainer {
         grid-template-rows: 1fr;
     }

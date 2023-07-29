@@ -1,5 +1,5 @@
 import style from "../styles/welcomesection.module.scss";
-import img from "../assets/group.jpg";
+import img from "../assets/group.webp";
 
 export const WelcomeSection = () => {
   return (
@@ -22,7 +22,7 @@ export const WelcomeSection = () => {
         </section>
 
         <section className={style.welcomeImages}>
-          <img src={img}></img>
+          <img alt="ceramic_collage_image" src={img}></img>
         </section>
       </article>
     </section>

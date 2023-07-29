@@ -1,6 +1,28 @@
+@import './globals.scss';
+
 .pagination {
     text-align: center;
+    display: flex;
+    grid-template-columns: repeat(5, 1fr);
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    line-height: 44px;
+    cursor: pointer;
+    margin-bottom: $spacing-large;
     span {
-        margin: 16px;
+        margin: 8px;
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        vertical-align: middle;
+        align-items: center;
     }
+
+    .active {
+        font-size: 2rem;
+    }
+    .default{
+        font-size: 1rem;
+    }   
 }

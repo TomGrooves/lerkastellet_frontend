@@ -2,11 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import style from "../styles/gallery.module.scss";
 import { graphQLClient } from "../graphqlClient";
 import { getOrderedProducts } from "../requests/getOrderedProducts";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { Modal } from "./Modal";
 import { Pagination } from "./Pagination";
 import { ItemType, ProductType } from "../types/types";
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
+import { ClipLoader } from "react-spinners";
 
 export const Gallery = () => {
   const [skipCount, setSkipCount] = useState<number>(0);
@@ -24,10 +25,10 @@ export const Gallery = () => {
 
   const handlePrevNext = (order: string) => {
     if (order === "asc") {
-      setSkipCount((prev) => prev + 10);
+      setSkipCount((prev) => prev + 12);
     }
     if (order === "desc") {
-      setSkipCount((prev) => prev - 10);
+      setSkipCount((prev) => prev - 12);
     }
   };
 
@@ -45,21 +46,24 @@ export const Gallery = () => {
     return (
       <section id="gallery">
         <h2 className={style.galleryHeading}>Galleriet</h2>
+            <Suspense fallback={<ClipLoader/>}>
         <div className={style.galleryWrapper}>
           <FiArrowLeftCircle onClick={() => handlePrevNext("desc")} />
           <div className={style.imageGallery}>
             {dataQuery.data?.productCollection?.items?.map((item, index) => {
               return (
-                <img
-                  onClick={() => handleOpenModal(item)}
-                  src={item.image.url}
-                  key={item.title.toString()}
-                ></img>
-              );
-            })}
+                  <img
+                    onClick={() => handleOpenModal(item)}
+                    src={item.image.url}
+                    key={item.title.toString()}
+                    alt={"image:"+item.title}
+                  ></img>
+                  );
+                })}
           </div>
           <FiArrowRightCircle onClick={() => handlePrevNext("asc")} />
         </div>
+                </Suspense>
         <Modal
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
