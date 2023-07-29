@@ -2,13 +2,19 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import style from "../styles/contact.module.scss";
 
+type FormValues = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 export const ContactForm = () => {
-  const { register, handleSubmit } = useForm();
-  const [feedbackText, setFeedbackText] = useState("");
+  const { register, handleSubmit } = useForm<FormValues>();
+  const [feedbackText, setFeedbackText] = useState<string>("");
 
-  const onSubmit = (data) => sendFormData(data);
+  const onSubmit = (data: FormValues) => sendFormData(data);
 
-  const sendFormData = (data) => {
+  const sendFormData = (data: FormValues) => {
     if (data.name && data.email && data.email) {
       const fetchOptions = {
         method: "POST",
@@ -45,14 +51,20 @@ export const ContactForm = () => {
       <h2>Kontakt</h2>
       <h4>{feedbackText}</h4>
       <form onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="name"><span>Navn</span></label>
-          <input {...register("name", { required: true })} />
-          <label htmlFor="email"><span>Email</span></label>
-          <input type="email" {...register("email", { required: true })} />
-   
-          <label htmlFor="message"><span>Besked</span></label>
-          <input type="textfield" {...register("message", { required: true })} />
-        <input type="submit" value="Send"/>
+        <label htmlFor="name">
+          <span>Navn</span>
+        </label>
+        <input {...register("name", { required: true })} />
+        <label htmlFor="email">
+          <span>Email</span>
+        </label>
+        <input type="email" {...register("email", { required: true })} />
+
+        <label htmlFor="message">
+          <span>Besked</span>
+        </label>
+        <input type="textfield" {...register("message", { required: true })} />
+        <input type="submit" value="Send" />
       </form>
       <div
         style={{

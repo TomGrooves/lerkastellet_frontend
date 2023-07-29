@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import style from "../styles/navbar.module.scss";
+
 export const Navbar = () => {
-  const [scrollHeight, setScrollHeight] = useState(0);
+  const [scrollHeight, setScrollHeight] = useState<number>(0);
 
   useEffect(() => {
-    const handleScroll = (event) => {
+    const handleScroll = () => {
       setScrollHeight(window.scrollY);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
