@@ -32,7 +32,7 @@ export const Pagination = ({
 
   const handlePagination = (number: number) => {
     // skip_num is equal to the number the user clicked "eg. 2" -1 for the index and multiplied by 10. So 2 becomes 10, 3 becomes 20.
-    let skip_num = (number - 1) * 10;
+    let skip_num = (number - 1) * 12;
     setSkipCount(skip_num);
   };
 
@@ -40,7 +40,7 @@ export const Pagination = ({
     const createPagination = () => {
       // take the length of the array with all items and multiply by ten, then round up to nearest to get number of points
       const numberOfPoints = Math.ceil(
-        countQuery?.data?.productCollection?.items?.length! / 10
+        countQuery?.data?.productCollection?.items?.length! / 12
       );
 
       // create a new array
@@ -61,9 +61,9 @@ export const Pagination = ({
         return (
           <span
             style={
-              skipCount === (item.point - 1) * 10
-                ? { fontSize: "2rem" }
-                : { fontSize: "1rem" }
+              skipCount === (item.point - 1) * 12
+                ? { fontSize: "1.4rem", borderRadius: "50%", backgroundColor: "rgb(167, 149, 141)", color:"white" }
+                : { fontSize: "1.2rem" }
             }
             key={item.point.toString()}
             onClick={() => handlePagination(item.point)}

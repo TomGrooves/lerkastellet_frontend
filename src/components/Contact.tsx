@@ -48,22 +48,24 @@ export const ContactForm = () => {
 
   return (
     <section id="contact" className={style.contactContainer}>
-      <h2>Kontakt</h2>
-      <h4>{feedbackText}</h4>
+      <article>
+        <h2>Kontakt</h2>
+        {feedbackText !== "" && <h4>{feedbackText}</h4>}
+      </article>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="name">
-          <span>Navn</span>
-        </label>
+        <label aria-label="name" htmlFor="name">
+          Navn
         <input {...register("name", { required: true })} />
-        <label htmlFor="email">
-          <span>Email</span>
         </label>
+        <label aria-label="email" htmlFor="email">
+          Email
         <input type="email" {...register("email", { required: true })} />
-
-        <label htmlFor="message">
-          <span>Besked</span>
         </label>
+
+        <label aria-label="message" htmlFor="message">
+          Besked
         <input type="textfield" {...register("message", { required: true })} />
+        </label>
         <input type="submit" value="Send" />
       </form>
       <div

@@ -1,5 +1,5 @@
 import style from '../styles/header.module.scss'
-import bgimage from '../assets/bgimg.jpeg'
+import bgimage from '../assets/bgimgnew.webp'
 export const Header = () => {
 
     return (

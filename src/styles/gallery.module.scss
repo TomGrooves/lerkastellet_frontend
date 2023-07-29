@@ -12,19 +12,27 @@
     justify-content: center;
 
     img {
+        cursor: pointer;
         width: auto;
         height: 200px;
         border-radius: 8px;
-        
     }
 }
 
 .galleryWrapper {
     display: grid;
-    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-columns: 1fr 10fr 1fr;
     justify-content: center;
     align-items: center;
     font-size: $font-size-medium;
+    justify-items: center;
+    margin: auto;
+    width: 70%;
+    svg {
+        margin: $spacing-medium;
+        cursor: pointer;
+        color: $color-brown-darker;
+    }
 }
 .galleryHeading {
    text-align: center;
@@ -37,16 +45,19 @@
 
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 1160px) {
     .imageGallery {
         grid-template-columns: 1fr 1fr;
+        width: 100%;
         img {
             width: 100%;
             height: auto;
         }
     }
+    .galleryWrapper{
+        width: 100%;
+    }
     .galleryHeading {
         font-size: 2rem;
-
     }
 }
