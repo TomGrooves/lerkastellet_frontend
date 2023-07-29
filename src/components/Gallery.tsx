@@ -1,18 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
 import style from "../styles/gallery.module.scss";
 import { graphQLClient } from "../graphqlClient";
-import {
-  getOrderedProducts,
-} from "../requests/getOrderedProducts";
+import { getOrderedProducts } from "../requests/getOrderedProducts";
 import { useState } from "react";
 import { Modal } from "./Modal";
 import { Pagination } from "./Pagination";
 import { ItemType, ProductType } from "../types/types";
+import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 
 export const Gallery = () => {
   const [skipCount, setSkipCount] = useState<number>(0);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedItem, setSelectedItem] = useState<ItemType>({title: "", image: {url: ""}});
+  const [selectedItem, setSelectedItem] = useState<ItemType>({
+    title: "",
+    image: { url: "" },
+  });
 
   const dataQuery: ProductType = useQuery(
     ["getOrderedProducts", skipCount],
@@ -43,27 +45,27 @@ export const Gallery = () => {
     return (
       <section id="gallery">
         <h2 className={style.galleryHeading}>Galleriet</h2>
-        <div className={style.imageGallery}>
-          <button onClick={() => handlePrevNext("desc")}>BACK</button>
-
-          {dataQuery.data?.productCollection?.items?.map((item, index) => {
-            return (
-              <img
-                onClick={() => handleOpenModal(item)}
-                src={item.image.url}
-                key={item.title.toString()}
-              ></img>
-            );
-          })}
-
-          <button onClick={() => handlePrevNext("asc")}>FORWARD</button>
+        <div className={style.galleryWrapper}>
+          <FiArrowLeftCircle onClick={() => handlePrevNext("desc")} />
+          <div className={style.imageGallery}>
+            {dataQuery.data?.productCollection?.items?.map((item, index) => {
+              return (
+                <img
+                  onClick={() => handleOpenModal(item)}
+                  src={item.image.url}
+                  key={item.title.toString()}
+                ></img>
+              );
+            })}
+          </div>
+          <FiArrowRightCircle onClick={() => handlePrevNext("asc")} />
         </div>
         <Modal
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
           selectedItem={selectedItem}
         />
-        <Pagination setSkipCount={setSkipCount} skipCount={skipCount}/>
+        <Pagination setSkipCount={setSkipCount} skipCount={skipCount} />
       </section>
     );
 };

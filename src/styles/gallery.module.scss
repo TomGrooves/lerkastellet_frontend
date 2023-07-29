@@ -18,6 +18,14 @@
         
     }
 }
+
+.galleryWrapper {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-size-medium;
+}
 .galleryHeading {
    text-align: center;
    margin: auto;
