@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { graphQLClient } from "../graphqlClient";
 import { useQuery } from "@tanstack/react-query";
 import { getTotalItemCount } from "../requests/getTotalItemCount";
+import style from '../styles/pagination.module.scss'
 
 type ProductCountType = {
   data:
@@ -55,7 +56,7 @@ export const Pagination = ({
   }, [countQuery.data]);
 
   return (
-    <>
+    <div className={style.pagination}>
       {points?.map((item) => {
         return (
           <span
@@ -71,6 +72,6 @@ export const Pagination = ({
           </span>
         );
       })}
-    </>
+    </div>
   );
 };
