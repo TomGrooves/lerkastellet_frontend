@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import {MainPage} from '../src/pages/MainPage'
+import {MainPage} from './pages/MainPage'
 import './App.css'
 
 function App() {
