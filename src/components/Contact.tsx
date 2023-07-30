@@ -55,16 +55,19 @@ export const ContactForm = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <label aria-label="name" htmlFor="name">
           Navn
-        <input {...register("name", { required: true })} />
+          <input {...register("name", { required: true })} />
         </label>
         <label aria-label="email" htmlFor="email">
           Email
-        <input type="email" {...register("email", { required: true })} />
+          <input type="email" {...register("email", { required: true })} />
         </label>
 
         <label aria-label="message" htmlFor="message">
           Besked
-        <input type="textfield" {...register("message", { required: true })} />
+          <input
+            type="textfield"
+            {...register("message", { required: true })}
+          />
         </label>
         <input type="submit" value="Send" />
       </form>

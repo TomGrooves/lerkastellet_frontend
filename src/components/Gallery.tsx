@@ -26,8 +26,6 @@ export const Gallery = () => {
       await graphQLClient.request(getOrderedProducts, { skipCount: skipCount })
   );
 
-  console.log(arrLength)
-
   const handlePrevNext = (order: string) => {
     if (order === "asc") {
       // if order is ascending check if previous value + 12 is less then or equal to total length of the array, else set it to prev value.
