@@ -26,14 +26,16 @@ export const Gallery = () => {
       await graphQLClient.request(getOrderedProducts, { skipCount: skipCount })
   );
 
+  console.log(arrLength)
+
   const handlePrevNext = (order: string) => {
     if (order === "asc") {
       // if order is ascending check if previous value + 12 is less then or equal to total length of the array, else set it to prev value.
-      setSkipCount((prev) => (prev + 12 <= arrLength ? prev + 12 : prev));
+      setSkipCount((prev) => (prev + 12 < arrLength ? prev + 12 : prev));
     }
     if (order === "desc") {
       // if order is descenting check if previous value - 12 is greater then 0, else set it to 0.
-      setSkipCount((prev) => (prev - 12 >= 0 ? prev - 12 : 0));
+      setSkipCount((prev) => (prev - 12 > 0 ? prev - 12 : 0));
     }
   };
 
