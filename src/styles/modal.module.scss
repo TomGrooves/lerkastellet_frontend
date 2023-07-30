@@ -3,7 +3,8 @@
 .modal {
     position: relative;
     display: grid;
-    width: 50%;
+    width: 60%;
+    max-width: 860px;
     height: auto;
     margin:auto;
     z-index: 4;
@@ -29,6 +30,9 @@
     top:0;
     left:0;
     background-color: rgba(20,20,20,0.5);
+}
+@media only screen and (max-width: 680px) {
+
 }
 
 @media only screen and (max-width: 1160px) {

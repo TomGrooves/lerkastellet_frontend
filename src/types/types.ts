@@ -18,3 +18,13 @@ export type ProductType = {
     error?: string | null,
     status?: string
   }
+
+export type ProductCountType = {
+  data:
+    | {
+        productCollection: {
+          items: Array<{ title: string }>;
+        };
+      }
+    | undefined;
+};

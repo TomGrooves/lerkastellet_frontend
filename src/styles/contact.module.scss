@@ -47,20 +47,30 @@
             color: $color-brown-darker;
         }
         input[type="submit"]:hover {
-            background-color: $color-brown-light;
+            background-color: $color-brown-darker;
+            color: $color-white;
             outline:solid 1px $color-white;
         }
 
+        input[type="submit"]:focus {
+            outline: solid 1px $color-brown-light;
+            background-color: $color-cta;
+        }
+
         input:focus {
-            outline:none;
+            outline: solid 2px $color-cta;
             border-color: $color-brown-light;
         }
     }
 }
 
+@media only screen and (max-width: 680px) {
+
+}
+
 @media only screen and (max-width: 1160px) {
     .contactContainer {
-        width: 90%;
+        width: 70%;
         h2 {
             font-size: 2rem;
         }
@@ -78,7 +88,7 @@
                 height: 40px;
             }
             input[type="submit"]{
-              width: 50%;
+              width: 20%;
               height: 40px;
               font-size: 1rem;
               text-align: center;
@@ -87,5 +97,11 @@
                 height: 120px;
             }
         }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .contactContainer {
+        width: 80%;
     }
 }
