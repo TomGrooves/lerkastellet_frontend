@@ -30,7 +30,7 @@
     margin: auto;
     width: 70%;
     svg {
-        font-size: $font-size-small * 1.2;
+        font-size: $font-size-small * 1.5;
         margin: $spacing-medium;
         cursor: pointer;
         color: $color-brown-darker;
@@ -47,24 +47,42 @@
 
 }
 
+
 @media only screen and (max-width: 1160px) {
     .imageGallery {
         grid-template-columns: 1fr 1fr;
-        width: 100%;
+        margin: auto;
+        width: 90%;
         img {
             width: 100%;
             height: auto;
         }
     }
     .galleryWrapper{
-        width: 90%;
+        width: 80%;
         grid-template-columns: 1fr;
         margin: $spacing-medium;
+        margin:auto;
+        margin-bottom: $spacing-medium;
         svg {
             display: none;
         }
     }
     .galleryHeading {
         font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+
+    .imageGallery {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    .imageGallery {
+        width: 100%;
     }
 }

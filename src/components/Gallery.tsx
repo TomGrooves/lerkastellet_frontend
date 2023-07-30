@@ -8,6 +8,7 @@ import { Pagination } from "./Pagination";
 import { ItemType, ProductType } from "../types/types";
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import { ClipLoader } from "react-spinners";
+import { useGetNumOfItems } from "../hooks/useGetNumOfItems";
 
 export const Gallery = () => {
   const [skipCount, setSkipCount] = useState<number>(0);
@@ -17,6 +18,8 @@ export const Gallery = () => {
     image: { url: "" },
   });
 
+  const { arrLength } = useGetNumOfItems();
+
   const dataQuery: ProductType = useQuery(
     ["getOrderedProducts", skipCount],
     async () =>
@@ -25,10 +28,12 @@ export const Gallery = () => {
 
   const handlePrevNext = (order: string) => {
     if (order === "asc") {
-      setSkipCount((prev) => prev + 12);
+      // if order is ascending check if previous value + 12 is less then or equal to total length of the array, else set it to prev value.
+      setSkipCount((prev) => (prev + 12 <= arrLength ? prev + 12 : prev));
     }
     if (order === "desc") {
-      setSkipCount((prev) => prev - 12);
+      // if order is descenting check if previous value - 12 is greater then 0, else set it to 0.
+      setSkipCount((prev) => (prev - 12 >= 0 ? prev - 12 : 0));
     }
   };
 
@@ -37,33 +42,30 @@ export const Gallery = () => {
     setIsModalOpen(true);
   };
 
-  console.log("data", dataQuery?.data);
-  console.log("skip", skipCount);
-
   if (dataQuery?.isInitialLoading) return <h1>Loading....</h1>;
   if (dataQuery?.error) return <h1>Something went wrong..</h1>;
   if (dataQuery?.status == "success")
     return (
       <section id="gallery">
         <h2 className={style.galleryHeading}>Galleriet</h2>
-            <Suspense fallback={<ClipLoader/>}>
-        <div className={style.galleryWrapper}>
-          <FiArrowLeftCircle onClick={() => handlePrevNext("desc")} />
-          <div className={style.imageGallery}>
-            {dataQuery.data?.productCollection?.items?.map((item, index) => {
-              return (
+        <Suspense fallback={<ClipLoader />}>
+          <div className={style.galleryWrapper}>
+            <FiArrowLeftCircle onClick={() => handlePrevNext("desc")} />
+            <div className={style.imageGallery}>
+              {dataQuery.data?.productCollection?.items?.map((item, index) => {
+                return (
                   <img
                     onClick={() => handleOpenModal(item)}
                     src={item.image.url}
                     key={item.title.toString()}
-                    alt={"image:"+item.title}
+                    alt={"image:" + item.title}
                   ></img>
-                  );
-                })}
+                );
+              })}
+            </div>
+            <FiArrowRightCircle onClick={() => handlePrevNext("asc")} />
           </div>
-          <FiArrowRightCircle onClick={() => handlePrevNext("asc")} />
-        </div>
-                </Suspense>
+        </Suspense>
         <Modal
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}

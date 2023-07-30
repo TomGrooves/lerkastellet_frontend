@@ -3,16 +3,8 @@ import { graphQLClient } from "../graphqlClient";
 import { useQuery } from "@tanstack/react-query";
 import { getTotalItemCount } from "../requests/getTotalItemCount";
 import style from '../styles/pagination.module.scss'
-
-type ProductCountType = {
-  data:
-    | {
-        productCollection: {
-          items: Array<{ title: string }>;
-        };
-      }
-    | undefined;
-};
+import { ProductCountType } from "../types/types";
+import { useGetNumOfItems } from "../hooks/useGetNumOfItems";
 
 interface PaginationInterface {
   setSkipCount: (arg: number) => void;
@@ -25,10 +17,7 @@ export const Pagination = ({
 }: PaginationInterface) => {
   const [points, setPoints] = useState<Array<{ point: number }>>([]);
 
-  const countQuery: ProductCountType = useQuery(
-    ["getTotalItemCount"],
-    async () => await graphQLClient.request(getTotalItemCount)
-  );
+  const {arrLength} = useGetNumOfItems()
 
   const handlePagination = (number: number) => {
     // skip_num is equal to the number the user clicked "eg. 2" -1 for the index and multiplied by 10. So 2 becomes 10, 3 becomes 20.
@@ -40,7 +29,7 @@ export const Pagination = ({
     const createPagination = () => {
       // take the length of the array with all items and multiply by ten, then round up to nearest to get number of points
       const numberOfPoints = Math.ceil(
-        countQuery?.data?.productCollection?.items?.length! / 12
+        arrLength / 12
       );
 
       // create a new array
@@ -53,7 +42,7 @@ export const Pagination = ({
       setPoints(pointsArray);
     };
     createPagination();
-  }, [countQuery.data]);
+  }, [arrLength]);
 
   return (
     <div className={style.pagination}>

@@ -13,10 +13,6 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    console.log(scrollHeight)
-  },[scrollHeight])
-
   return (
     <nav className={scrollHeight <= 0 ? style.navBar : style.slim}>
       <div>

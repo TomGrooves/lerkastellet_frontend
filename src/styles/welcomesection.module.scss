@@ -34,6 +34,7 @@
     }
 }
 
+
 @media only screen and (max-width: 1160px) {
 
     .welcomeContainer {
@@ -47,16 +48,37 @@
             grid-template-columns: 1fr;
             .welcomeText {
                 p {
-                    font-size: 1rem;
+                    font-size: 1.4rem;
                 }
+                width: 70%;
+                margin: auto;
             }
             .welcomeImages {
                 display: grid;
                 justify-items: center;
                 img {
-                    width: 80%;
+                    width: 70%;
                 }
             }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .welcomeContainer {
+        width: 90%;
+        height: auto;
+        article {
+            grid-template-columns: 1fr;
+            .welcomeText {
+                p {
+                    font-size: 1rem;
+                }
+                width: 90%;
+                margin: auto;
+            }
+            
         }
     }
 }
