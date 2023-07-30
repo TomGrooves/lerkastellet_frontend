@@ -1,6 +1,6 @@
 import style from '../styles/header.module.scss'
 import bgimage from '../assets/bgimgnew.webp'
-import { ReactComponent as Logo } from '../assets/logo.svg'
+import { ReactComponent as Logo } from '../assets/newLogo.svg'
 
 export const Header = () => {
 
