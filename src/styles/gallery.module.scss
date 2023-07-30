@@ -16,6 +16,7 @@
         width: auto;
         height: 200px;
         border-radius: 8px;
+        box-shadow: 3px 4px 8px 0px rgba(12, 12, 12, 0.4);
     }
 }
 
@@ -29,6 +30,7 @@
     margin: auto;
     width: 70%;
     svg {
+        font-size: $font-size-small * 1.2;
         margin: $spacing-medium;
         cursor: pointer;
         color: $color-brown-darker;
@@ -55,7 +57,12 @@
         }
     }
     .galleryWrapper{
-        width: 100%;
+        width: 90%;
+        grid-template-columns: 1fr;
+        margin: $spacing-medium;
+        svg {
+            display: none;
+        }
     }
     .galleryHeading {
         font-size: 2rem;
