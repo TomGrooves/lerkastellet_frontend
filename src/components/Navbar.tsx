@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import style from "../styles/navbar.module.scss";
-import logo from '../assets/Black logo - no background.png'
+import logo from "../assets/Black logo - no background.png";
 
 export const Navbar = () => {
   const [scrollHeight, setScrollHeight] = useState<number>(0);
