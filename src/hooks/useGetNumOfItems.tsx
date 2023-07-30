@@ -8,14 +8,15 @@ export function useGetNumOfItems(){
 
     const [arrLength, setArrLenght] = useState<number>(0)
 
+    
     const countQuery: ProductCountType = useQuery(
         ["getTotalItemCount"],
         async () => await graphQLClient.request(getTotalItemCount)
       );
-
+      const length = countQuery.data?.productCollection?.items?.length!
         useEffect(() => {
-            setArrLenght(countQuery.data?.productCollection.items.length!)
-        },[])
+            setArrLenght(length)
+        },[length])
 
         return (
             {arrLength}
