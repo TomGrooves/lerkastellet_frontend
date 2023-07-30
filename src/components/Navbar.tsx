@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import style from "../styles/navbar.module.scss";
+import logo from '../assets/Black logo - no background.png'
 
 export const Navbar = () => {
   const [scrollHeight, setScrollHeight] = useState<number>(0);
@@ -11,6 +12,10 @@ export const Navbar = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    console.log(scrollHeight)
+  },[scrollHeight])
 
   return (
     <nav className={scrollHeight <= 0 ? style.navBar : style.slim}>

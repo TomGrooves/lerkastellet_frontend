@@ -9,7 +9,7 @@ query($skipCount: Int!){
       height
       width
       image {
-        url(transform:{width: 600, format: WEBP})
+        url(transform:{width: 1200, format: WEBP})
       }
     }
   }
