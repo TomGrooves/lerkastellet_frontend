@@ -9,8 +9,7 @@
   background-position-y: 50%;
   background-blend-mode: lighten;
   background-color: rgba(181, 173, 173, 0.38);
-
-
+  
 
   svg {
     font-size: 6.4rem;
@@ -54,7 +53,7 @@
     height: 50vh;
 
     svg {
-        margin-top: 5vh;
+        margin-top: 2.5vh;
         height: 45vh;
     }
 
@@ -71,28 +70,16 @@
   }
 }
 
-@media only screen and (max-width: 680px) {
-    .header {
-        height: 40vh;
-    
-        svg {
-            width: 90%;
-            margin-left: 5%;
-            margin-top: 5vh;
-            height: 35vh;
-        }
-    }
-}
 
 @media only screen and (max-width: 400px) {
     .header {
-        height: 30vh;
+        height: 50vh;
     
         svg {
-            width: 90%;
-            margin-left: 5%;
-            margin-top: 5vh;
-            height: 25vh;
+            width: 100%;
+            margin-top: 2vh;
+            height: 30vh;
+            margin-left: 4px;
         }
     }
 }
