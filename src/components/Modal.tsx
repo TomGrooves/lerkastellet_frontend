@@ -21,7 +21,9 @@ export const Modal = ({
       <>
         <div onClick={() => handleClose()} className={style.modalBackground}>
           <div className={style.modal}>
-            <p>{selectedItem.title}</p>
+            <p>{selectedItem.title}</p>ß
+            {selectedItem?.height ? <p>Højde: {selectedItem.height}</p> : null}
+            {selectedItem?.width ? <p>Vidte: {selectedItem.width}</p> : null}
             <img src={selectedItem.image.url} />
           </div>
         </div>
