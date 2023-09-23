@@ -21,9 +21,11 @@ export const Modal = ({
       <>
         <div onClick={() => handleClose()} className={style.modalBackground}>
           <div className={style.modal}>
-            <p>{selectedItem.title}</p>ß
-            {selectedItem?.height ? <p>Højde: {selectedItem.height}</p> : null}
-            {selectedItem?.width ? <p>Vidte: {selectedItem.width}</p> : null}
+            <div>
+              <p>Emne {selectedItem.title}</p>
+              {selectedItem?.height ? <p>Højde: {selectedItem.height} cm</p> : null}
+              {selectedItem?.width ? <p>Bredde: {selectedItem.width} cm</p> : null}
+            </div>
             <img src={selectedItem.image.url} />
           </div>
         </div>
