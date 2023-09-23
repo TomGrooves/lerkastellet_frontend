@@ -13,13 +13,27 @@
     border-radius: $spacing-small;
     padding: $spacing-medium;
     margin-top: 5%;
-    p {
-        font-size: $font-size-semi-medium;
+    div{
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        align-items: center;
+        justify-items: start;
+        p:nth-child(2){
+            justify-self: end;
+        }
+        p:nth-child(3){
+            justify-self: end;
+        }
+        p {
+            margin-left:8px;
+            margin-right: 8px;
+            font-size: $font-size-small * 1.2;
+        }
     }
     img {
         width: 100%;
         height: auto;
-    }
+}
 }
 
 .modalBackground{
@@ -41,15 +55,21 @@
 
 @media only screen and (max-width: 1160px) {
     .modal{
-        margin-top: 5%;
+        margin-top: 10%;
         width: 80%;
         padding: 8px;
     }
 }
 @media only screen and (max-width: 680px) {
     .modal{
-        margin-top: 15%;
+        margin-top: 20%;
         width: 90%;
         padding: 8px;
+
+        div {
+            p{
+                font-size: medium;
+            }
+        }
     }
 }
